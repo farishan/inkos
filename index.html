@@ -8,10 +8,10 @@
 </head>
 <body>
   <div id="app" class="p-12">
-    <div class="flex border">
+    <div class="flex flex-wrap border">
 
       <!-- Output Area -->
-      <div class="md:w-1/2">
+      <div class="w-full md:w-1/2">
         <div class="p-4">
           <p class="border-b text-right mb-4">
             total items: {{ this.items.length }}
@@ -35,7 +35,7 @@
       </div>
 
       <!-- Input Area -->
-      <div class="md:w-1/2">
+      <div class="w-full md:w-1/2">
         <div class="border-l">
           <div class="border-b">
             <input class="p-4 w-full" placeholder="name" v-model="name" value>
@@ -47,7 +47,7 @@
               v-model="description">
             </textarea>
           </div>
-          <button class="p-4 w-full" @click="add">add</button>
+          <button class="border-b p-4 w-full" @click="add">add</button>
         </div>
       </div>
 
