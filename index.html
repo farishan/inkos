@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="tailwind.css">
+</head>
+<body>
+  <div id="app" class="p-12">
+    <div class="flex border">
+
+      <!-- Output Area -->
+      <div class="md:w-1/2">
+        <div class="p-4">
+          <p class="border-b text-right mb-4">
+            total items: {{ this.items.length }}
+          </p>
+          <ul>
+            <li v-for="(item, index) in items" class="w-full">
+              <div class="border p-2 flex w-full">
+                <div class="border px-2 mr-2">
+                  {{ index+1 }}
+                </div>
+                <div>
+                  <p class="text-xs text-gray-600">name:</p>
+                  <p class="font-bold">{{ item.name }}</p>
+                  <p class="text-xs text-gray-600">description:</p>
+                  <p>{{ item.description }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="md:w-1/2">
+        <div class="border-l">
+          <div class="border-b">
+            <input class="p-4 w-full" placeholder="name" v-model="name" value>
+          </div>
+          <div class="border-b">
+            <textarea
+              class="p-4 block w-full"
+              placeholder="description"
+              v-model="description">
+            </textarea>
+          </div>
+          <button class="p-4 w-full" @click="add">add</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
