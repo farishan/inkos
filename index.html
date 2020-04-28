@@ -18,15 +18,20 @@
           </p>
           <ul>
             <li v-for="(item, index) in items" class="w-full">
-              <div class="border p-2 flex w-full">
-                <div class="border px-2 mr-2">
-                  {{ index+1 }}
+              <div class="border p-2 flex w-full justify-between">
+                <div class="flex">
+                  <div class="border px-2 mr-2">
+                    {{ index+1 }}
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-600">name:</p>
+                    <p class="font-bold">{{ item.name }}</p>
+                    <p class="text-xs text-gray-600">description:</p>
+                    <p>{{ item.description }}</p>
+                  </div>
                 </div>
                 <div>
-                  <p class="text-xs text-gray-600">name:</p>
-                  <p class="font-bold">{{ item.name }}</p>
-                  <p class="text-xs text-gray-600">description:</p>
-                  <p>{{ item.description }}</p>
+                  <button class="cursor-pointer" @click="remove(index)">X</button>
                 </div>
               </div>
             </li>

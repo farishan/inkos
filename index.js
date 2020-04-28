@@ -7,6 +7,10 @@ new Vue({
       description: ''
     }
   },
+  mounted() {
+    let data = localStorage.getItem('inkos_data')
+    if (data) this.items = JSON.parse(data)
+  },
   methods: {
     add(){
       let item = {
@@ -15,11 +19,17 @@ new Vue({
       }
 
       this.items.push(item)
+      this.save()
 
       this.name = ''
       this.description = ''
-
-      console.log(this.items)
+    },
+    remove(index){
+      this.items.splice(index, 1)
+      this.save()
+    },
+    save(){
+      localStorage.setItem('inkos_data', JSON.stringify(this.items))
     }
   }
 })
